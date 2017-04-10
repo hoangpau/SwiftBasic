@@ -11,16 +11,36 @@ func greater(first: CGSize, last: CGSize) -> Bool {
     return first.width > last.width && first.height > last.height
 }
 
-var a : String?
-var x = "ax"
+
+class Car {
+    var owner: String
+    init(owner: String) {
+        self.owner = owner
+    }
+}
+
+var a : Car?
+var x = Car(owner:"Thang")
+
 a = x
+x.owner = "name"
+print(a!.owner)
 
 var completeBlock : ((String) -> Void)?
 
-func completeFunction(str: String) {
-    print(str)
+class Foo {
+    var additionalString = "additionalString"
+    lazy var otherCompleteBlock : ((String) -> Void)? = {(str) in
+        print(str + " " + self.additionalString + " completeBlock")
+    }
+    
 }
-completeBlock = completeFunction
+
+let foo = Foo()
+
+completeBlock = foo.otherCompleteBlock
+foo.additionalString = "abc"
+
 
 func getAPI(completeBlock:(String) -> Void) {
     completeBlock("result")
