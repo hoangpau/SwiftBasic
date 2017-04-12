@@ -3,10 +3,11 @@ import Foundation
 struct Car {
     var numberOfWheels = 4
     
-    func changeNumberOfWheels(number: Int) {
+    mutating func changeNumberOfWheels(number: Int) {
         numberOfWheels = number
     }
 }
 
 let car = Car()
-car.numberOfWheels = 8
+
+print(car.numberOfWheels)

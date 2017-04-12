@@ -16,3 +16,8 @@ class Calculator {
 let calculator = Calculator()
 let a = calculator.add(10) 
 let b = calculator.add(50)
+print(a)
+print(b)
+
+let calculator2 = Calculator()
+let c = calculator2.add(10)
